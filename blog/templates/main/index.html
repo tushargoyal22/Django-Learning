@@ -6,7 +6,10 @@
     <h3> Top 10 Articles </h5>
     <ul>
         {% for article in articles %}
-            <li>{{article}}</li>
+            <a href= {% url 'get_article' article.pk %}>
+                <li>{{article}}</li>
+                <br>
+            </a>
         {% endfor %}
     </ul>
 {% endblock %}

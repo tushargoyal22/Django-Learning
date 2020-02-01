@@ -3,13 +3,20 @@
 
 {% block content %}
 
-    <h1> {{aricle.title}}</h1>
-    <h3> Created At {{aricle.createdAt}}</h3>
+    <h1> {{article.title}}</h1>
+    <h3> Created At {{article.createdAt}}</h3>
 
-    <h4> Written by: </h4>
+    <h4> Written by:
+            {% for author in article.authors.all %}
+            <li>
+                <a href= {% url 'get_author' author.pk %} >{{author}}</a>
+            </li>
+            {% endfor %} 
+     </h4>
+
 
     <p>
-        {{aricle.content}}
+        {{article.content}}
     </p>
 
 {% endblock %}
