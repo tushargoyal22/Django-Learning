@@ -1,0 +1,12 @@
+{% extends 'main/base.html' %}
+
+
+{% block content %}
+    <h1> Welcome to Blog Application </h1>
+    <h3> Top 10 Articles </h5>
+    <ul>
+        {% for article in articles %}
+            <li>{{article}}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
