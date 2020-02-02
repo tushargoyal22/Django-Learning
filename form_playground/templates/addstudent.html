@@ -8,9 +8,10 @@
 </head>
 <body>
     <h1>Add Student </h1>
-    <form>
+    <form method="post"> 
         {% csrf_token %}
         {{studentform}}
+        <button type="submit" >Submit</button>
     </form>
 </body>
 </html>

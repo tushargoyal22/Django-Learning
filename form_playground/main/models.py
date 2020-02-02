@@ -9,8 +9,10 @@ class Student(models.Model):
         ('F','Female'),
         ('M','Male')
     )
+
+    name = models.CharField(max_length=50)
+    roll_number = models.IntegerField()
+    gender = models.CharField(max_length = 1 ,choices =GENDERS)
+
     def __str__(self):
         return self.name
-
-    def get_absolute_url(self):
-        return reverse("_detail", kwargs={"pk": self.pk})

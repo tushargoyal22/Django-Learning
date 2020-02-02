@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from main import forms
 from main import models
+from django.http import HttpResponseRedirect
 # Create your views here.
 
 def index(request):
@@ -21,6 +22,12 @@ def students(request):
 
 def addstudent(request):
     studentform = forms.StudentForm()
+    if(request.method=="POST"):
+        studentform=forms.StudentForm(request.POST)
+        if(studentform.is_valid()):
+            student=studentform.save()
+            return HttpResponseRedirect('/students')
+            
     context={
         'studentform':studentform
     }
