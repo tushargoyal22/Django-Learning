@@ -4,7 +4,8 @@ from django.contrib.auth.views import LoginView,LogoutView
 
 
 class Login(LoginView):
-    pass
+    template_name='auth/login.html'
+
 
 class Logout(LogoutView):
     pass
